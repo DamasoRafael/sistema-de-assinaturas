@@ -1,5 +1,8 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,7 +17,12 @@ public class Main {
         Assinatura estudante = new PlanoEstudante("Damaso", 40);
 
         //guarda os tres num array de assinaturas
-        Assinatura[] assinaturas = { basico, anual, familiar, estudante };
+        //utilizando generics, apenas objetos do tipo Assinatura sao guardados
+        List<Assinatura> assinaturas = new ArrayList<>();
+        assinaturas.add(basico);
+        assinaturas.add(anual);
+        assinaturas.add(familiar);
+        assinaturas.add(estudante);
 
         //um unico laço trata os tres. Cada um responde do seu jeito. Isso é POLIMORFISMO
         //for aprimorado. Ler como "para cada a dentro de assinaturas"
@@ -24,7 +32,8 @@ public class Main {
             System.out.printf("Valor mensal: R$ %.2f%n", a.calcularValorMensal());
             System.out.println("-----------------------------");
         }
-            System.out.printf("Faturamento: R$ %.2f%n", faturamento);
+        System.out.println("Número de assinaturas: " + assinaturas.size());
+        System.out.printf("Faturamento: R$ %.2f%n", faturamento);
     }
 
 }
