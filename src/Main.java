@@ -3,6 +3,9 @@
 public class Main {
     public static void main(String[] args) {
 
+        //faturamento
+        double faturamento = 0;
+
         //cria um objeto de cada tipo
         //todos sao "Assinatura", mesmo sendo planos diferentes
         Assinatura basico = new PlanoBasico("Rafael", 40);
@@ -16,11 +19,12 @@ public class Main {
         //um unico laço trata os tres. Cada um responde do seu jeito. Isso é POLIMORFISMO
         //for aprimorado. Ler como "para cada a dentro de assinaturas"
         for (Assinatura a : assinaturas) {
+            faturamento += a.calcularValorMensal();
             System.out.println("Cliente: " + a.getNomeCliente());
             System.out.printf("Valor mensal: R$ %.2f%n", a.calcularValorMensal());
             System.out.println("-----------------------------");
         }
-
+            System.out.printf("Faturamento: R$ %.2f%n", faturamento);
     }
 
 }
