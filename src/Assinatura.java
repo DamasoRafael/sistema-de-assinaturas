@@ -1,4 +1,5 @@
-public class Assinatura {
+//classe abstrata para servir de base para herança e n poder ser inicializada como objeto
+public abstract class Assinatura {
     // Atributos privados: ninguem de fora mexe direto neles (encapsulamento)
     private String nomeCliente;
     private double valorBase;
@@ -12,9 +13,8 @@ public class Assinatura {
 
     // O metodo que toda assinatura tem. Na classe base, o valor é so o valor base
     // As filhas vão sobrescrever esse metodo com regras diferentes
-    public double calcularValorMensal() {
-        return valorBase;
-    }
+    //é abstrata pois toda assinatura sabe calcular o valor mensal, mas a classe base n deve dizer como
+    public abstract double calcularValorMensal();
 
     // Getters: a porta de entrada controlada para ler os atributos privados
     public String getNomeCliente() {
@@ -22,11 +22,17 @@ public class Assinatura {
     }
 
     public double getValorBase() {
-        return  valorBase;
+        return valorBase;
     }
+
+    public void descricao() {
+        System.out.println("Cliente: " + getNomeCliente());
+    }
+
+
     /*
-    public static void descricao(){
-        System.out.println("Assinatura de: " + );
+    public String descricao() {
+        String
     }
     */
 }

@@ -6,7 +6,7 @@ public class PlanoBasico extends Assinatura {
     }
 
     //Sobrescreve o metodo da classe base
-    //O plano basico pega o valor base, sem desconto nem taxa
+    //O plano basico pega o valor base, sem desconto, nem taxa
     @Override
     public double calcularValorMensal() {
         return getValorBase();
