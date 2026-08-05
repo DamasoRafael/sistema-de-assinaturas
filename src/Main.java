@@ -6,11 +6,22 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        Scanner sc2 = new Scanner(System.in);
+
+        String nome;
+
+        System.out.println("Digite seu nome: ");
+        nome = sc2.nextLine();
 
         int escolha = 0; //botei 0 pra forçar um valor e entrar no laço
 
         while (escolha < 1 || escolha > 5) {
-            System.out.println("Escolha um plano:");
+            System.out.println("Bem-vindo, " + nome + ". ");
+            System.out.println();
+            System.out.println("Esse é um sistema de assinatura. O valor base é 40 reais.");
+            System.out.println("O anual tem 20% de desconto, o familiar é cobrado uma taxa por cada membro e o estudante tem direito a 50% de desconto");
+            System.out.println();
+            System.out.println("Por favor, escolha um plano: ");
             System.out.println("1 - Básico");
             System.out.println("2 - Anual");
             System.out.println("3 - Familiar");
